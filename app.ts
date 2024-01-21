@@ -1,4 +1,4 @@
-//---------------------Arrays--------------------------------
+//------------------------------------Arrays--------------------------------
 let firstNames1: string[] = ["Can", "Huseyn", "Ahmet"]
 let firstNames2: Array<string> = ["Can", "Huseyn", "Ahmet"]
 console.log(firstNames2)
@@ -21,7 +21,7 @@ let values2: Array<string | number> = ["Apple", 12, 23, "MacBook"]
 console.log(values1, values2)
 
 
-// --------------------------------------Tuple-------------------------------------------
+// -----------------------------------Tuple-------------------------------------------
 
 let Id: number = 1
 let instructorName: string = "Huseyn"
@@ -31,7 +31,7 @@ let instructor: [number, string] = [1, "Huseyn"]
 console.log(instructor)
 
 
-// --------------------------Object--------------------------------------------------
+// ----------------------------------Object--------------------------------------------------
 
 type Person = {
     age: number,
@@ -47,30 +47,58 @@ objects = {
     worker: true
 }
 
-let person:{
+let person: {
     age: number,
     name: string,
     worker: boolean
 }
-person={
+person = {
     age: 20,
     name: "Huseyn",
     worker: true
 }
 console.log(objects.age)
 
-// -----------------------------------------Union------------------------------------
-// enum Media {
-//     Newspaper=1,
-//     Newsletter,
-//     Magazine,
+// -----------------------------------Enum------------------------------------
+enum Media {
+    Newspaper = 1,
+    Newsletter,
+    Magazine,
 
-// }
+}
 
-// enum PrintMedia {
-//     Newspaper="NEWS",
-//     Newsletter="Letter",
-//     Magazine="Magazine",
-// }
+enum PrintMedia {
+    Newspaper = "NEWS",
+    Newsletter = "Letter",
+    Magazine = "Magazine",
+}
 
 // console.log(PrintMedia.Newsletter)
+
+// -----------------------------------Unin-------------------------
+
+let code: string | number | boolean = true;
+
+// ------------------------------------Any---------------------------
+
+let someThing: any = true
+let someThing2: any = 12
+let someThing3: any = "Huseyn"
+
+// -----------------------------------Void---------------------------
+// geri deyer gondermirse void olur burada return olmur
+
+function sayHello():void{
+console.log('data')
+}
+
+sayHello()
+
+// ----------------------------------Never----------------------------
+//sadece xeta gondermek ucun
+
+function throwError(errorMsg:string):never{
+    throw new Error(errorMsg)
+}
+
+throwError('Xeta')
