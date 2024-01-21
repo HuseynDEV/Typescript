@@ -1,4 +1,4 @@
-//---------------------Arrays--------------------------------
+//------------------------------------Arrays--------------------------------
 var firstNames1 = ["Can", "Huseyn", "Ahmet"];
 var firstNames2 = ["Can", "Huseyn", "Ahmet"];
 console.log(firstNames2);
@@ -12,7 +12,7 @@ ids = [1, 2, 5, 6];
 var values1 = ["Apple", 12, 23, "MacBook"];
 var values2 = ["Apple", 12, 23, "MacBook"];
 console.log(values1, values2);
-// --------------------------------------Tuple-------------------------------------------
+// -----------------------------------Tuple-------------------------------------------
 var Id = 1;
 var instructorName = "Huseyn";
 // deyerleri uygun olaraq vermek lazimdir yeni 1e number 2e string
@@ -31,15 +31,34 @@ person = {
     worker: true
 };
 console.log(objects.age);
-// -----------------------------------------Union------------------------------------
-// enum Media {
-//     Newspaper=1,
-//     Newsletter,
-//     Magazine,
-// }
-// enum PrintMedia {
-//     Newspaper="NEWS",
-//     Newsletter="Letter",
-//     Magazine="Magazine",
-// }
+// -----------------------------------Enum------------------------------------
+var Media;
+(function (Media) {
+    Media[Media["Newspaper"] = 1] = "Newspaper";
+    Media[Media["Newsletter"] = 2] = "Newsletter";
+    Media[Media["Magazine"] = 3] = "Magazine";
+})(Media || (Media = {}));
+var PrintMedia;
+(function (PrintMedia) {
+    PrintMedia["Newspaper"] = "NEWS";
+    PrintMedia["Newsletter"] = "Letter";
+    PrintMedia["Magazine"] = "Magazine";
+})(PrintMedia || (PrintMedia = {}));
 // console.log(PrintMedia.Newsletter)
+// -----------------------------------Unin-------------------------
+var code = true;
+// ------------------------------------Any---------------------------
+var someThing = true;
+var someThing2 = 12;
+var someThing3 = "Huseyn";
+// -----------------------------------Void---------------------------
+// geri deyer gondermirse void olur burada return olmur
+function sayHello() {
+    console.log('data');
+}
+sayHello();
+// ----------------------------------Never----------------------------
+function throwError(errorMsg) {
+    throw new Error(errorMsg);
+}
+throwError('Xeta');
