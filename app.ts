@@ -101,4 +101,23 @@ function throwError(errorMsg:string):never{
     throw new Error(errorMsg)
 }
 
-throwError('Xeta')
+// throwError('Xeta')
+
+
+// -------------------------------interference------------------------
+let sayac=0
+// sayac='12' burada xeta olacaq cunki bunun tipi artqi number olaraq teyin edilib
+console.log(typeof sayac)
+
+// --------------------------------Assertion----------------------------
+
+let code2:any=123
+
+let empCode=<number>code2
+
+interface Employee{
+    name:string,
+    code:number
+}
+let employee=<Employee>{}
+employee.name='Huseyn'

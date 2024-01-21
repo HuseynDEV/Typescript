@@ -58,7 +58,17 @@ function sayHello() {
 }
 sayHello();
 // ----------------------------------Never----------------------------
+//sadece xeta gondermek ucun
 function throwError(errorMsg) {
     throw new Error(errorMsg);
 }
-throwError('Xeta');
+// throwError('Xeta')
+// -------------------------------interference------------------------
+var sayac = 0;
+// sayac='12' burada xeta olacaq cunki bunun tipi artqi number olaraq teyin edilib
+console.log(typeof sayac);
+// --------------------------------Assertion----------------------------
+var code2 = 123;
+var empCode = code2;
+var employee = {};
+employee.name = 'Huseyn';
