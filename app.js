@@ -76,3 +76,12 @@ function name2(ad, age) {
     console.log(ad, age);
 }
 name2("Huseyn", 12);
+// bu oxunaqli deyil
+function getFullName(person) {
+    return "".concat(person.firstName, " ").concat(person.lastName);
+}
+var person2 = {
+    firstName: "Huseyn",
+    lastName: "Alizada"
+};
+console.log(getFullName(person2));
