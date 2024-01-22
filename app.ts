@@ -88,8 +88,8 @@ let someThing3: any = "Huseyn"
 // -----------------------------------Void---------------------------
 // geri deyer gondermirse void olur burada return olmur
 
-function sayHello():void{
-console.log('data')
+function sayHello(): void {
+    console.log('data')
 }
 
 sayHello()
@@ -97,7 +97,7 @@ sayHello()
 // ----------------------------------Never----------------------------
 //sadece xeta gondermek ucun
 
-function throwError(errorMsg:string):never{
+function throwError(errorMsg: string): never {
     throw new Error(errorMsg)
 }
 
@@ -105,19 +105,53 @@ function throwError(errorMsg:string):never{
 
 
 // -------------------------------interference------------------------
-let sayac=0
+let sayac = 0
 // sayac='12' burada xeta olacaq cunki bunun tipi artqi number olaraq teyin edilib
 console.log(typeof sayac)
 
 // --------------------------------Assertion----------------------------
 
-let code2:any=123
+let code2: any = 123
 
-let empCode=<number>code2
+let empCode = <number>code2
 
-interface Employee{
-    name:string,
-    code:number
+interface Employee {
+    name: string,
+    code: number
 }
-let employee=<Employee>{}
-employee.name='Huseyn'
+let employee = <Employee>{}
+employee.name = 'Huseyn'
+
+
+function name2(ad: string, age: number): any {
+    console.log(ad, age)
+}
+name2("Huseyn", 12)
+
+
+
+
+
+
+
+
+// -------------------------------interface-------------------------------
+
+
+interface Person2 {
+
+    firstName: string,
+    lastName: string
+
+}
+// bu oxunaqli deyil
+function getFullName(person: Person2) {
+    return `${person.firstName} ${person.lastName}`
+}
+
+let person2 = {
+    firstName: "Huseyn",
+    lastName: "Alizada"
+}
+
+console.log(getFullName(person2))
