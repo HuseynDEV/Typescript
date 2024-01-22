@@ -121,3 +121,9 @@ interface Employee{
 }
 let employee=<Employee>{}
 employee.name='Huseyn'
+
+
+function name2(ad:string, age:number):any{
+    console.log(ad,age)
+}
+name2("Huseyn",12)

@@ -72,3 +72,7 @@ var code2 = 123;
 var empCode = code2;
 var employee = {};
 employee.name = 'Huseyn';
+function name2(ad, age) {
+    console.log(ad, age);
+}
+name2("Huseyn", 12);
