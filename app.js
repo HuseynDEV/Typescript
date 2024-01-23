@@ -1,93 +1,31 @@
-//------------------------------------Arrays--------------------------------
-var firstNames1 = ["Can", "Huseyn", "Ahmet"];
-var firstNames2 = ["Can", "Huseyn", "Ahmet"];
-console.log(firstNames2);
-// 
-var arr = [1, 2, 'Name', true, false, "Paul"];
-// 
-var fruits;
-fruits = ["adam", "john"];
-var ids;
-ids = [1, 2, 5, 6];
-var values1 = ["Apple", 12, 23, "MacBook"];
-var values2 = ["Apple", 12, 23, "MacBook"];
-console.log(values1, values2);
-// -----------------------------------Tuple-------------------------------------------
-var Id = 1;
-var instructorName = "Huseyn";
-// deyerleri uygun olaraq vermek lazimdir yeni 1e number 2e string
-var instructor = [1, "Huseyn"];
-console.log(instructor);
-var objects;
-objects = {
-    age: 20,
-    name: "Huseyn",
-    worker: true
-};
-var person;
-person = {
-    age: 20,
-    name: "Huseyn",
-    worker: true
-};
-console.log(objects.age);
-// -----------------------------------Enum------------------------------------
-var Media;
-(function (Media) {
-    Media[Media["Newspaper"] = 1] = "Newspaper";
-    Media[Media["Newsletter"] = 2] = "Newsletter";
-    Media[Media["Magazine"] = 3] = "Magazine";
-})(Media || (Media = {}));
-var PrintMedia;
-(function (PrintMedia) {
-    PrintMedia["Newspaper"] = "NEWS";
-    PrintMedia["Newsletter"] = "Letter";
-    PrintMedia["Magazine"] = "Magazine";
-})(PrintMedia || (PrintMedia = {}));
-// console.log(PrintMedia.Newsletter)
-// -----------------------------------Unin-------------------------
-var code = true;
-// ------------------------------------Any---------------------------
-var someThing = true;
-var someThing2 = 12;
-var someThing3 = "Huseyn";
-// -----------------------------------Void---------------------------
-// geri deyer gondermirse void olur burada return olmur
-function sayHello() {
-    console.log('data');
+// //------------------------------------Arrays--------------------------------
+// let firstNames1: string[] = ["Can", "Huseyn", "Ahmet"]
+// let firstNames2: Array<string> = ["Can", "Huseyn", "Ahmet"]
+// console.log(firstNames2)
+// // 
+// let arr = [1, 2, 'Name', true, false, "Paul"]
+// // 
+// let fruits: Array<string>;
+// fruits = ["adam", "john"]
+function getFullName2(person) {
+    return "".concat(person.firstName, " ").concat(person.lastName);
 }
-sayHello();
-// ----------------------------------Never----------------------------
-//sadece xeta gondermek ucun
-function throwError(errorMsg) {
-    throw new Error(errorMsg);
-}
-// throwError('Xeta')
-// -------------------------------interference------------------------
-var sayac = 0;
-// sayac='12' burada xeta olacaq cunki bunun tipi artqi number olaraq teyin edilib
-console.log(typeof sayac);
-// --------------------------------Assertion----------------------------
-var code2 = 123;
-var empCode = code2;
-var employee = {};
-employee.name = 'Huseyn';
-function name2(ad, age) {
-    console.log(ad, age);
-}
-name2("Huseyn", 12);
-// bu oxunaqli deyil
-function getFullName(person) {
-    return "".concat(person.firstName, " ").concat(person.lastName, " ").concat(person.middleName, " ");
-}
-var person2 = {
+var person = {
     firstName: "Huseyn",
-    lastName: "Alizada",
-    // middleName:"dwdadw"
+    lastName: "ALizada"
 };
-console.log(getFullName(person2));
+getFullName2(person);
+console.log(person.firstName);
 var format;
 format = function (str, isUpper) {
-    return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase();
+    return isUpper ? str.toLocaleLowerCase() : str.toLocaleUpperCase();
 };
-console.log(format("Huseyn", true));
+// ---------------------Generics---------------------
+var numbers = [12, 32, 43, 12];
+var strings = ['asdaw', 'effesf', 'wawdad'];
+function getRandom(items) {
+    var randomIndex = Math.floor(Math.random() * items.length);
+    return items[randomIndex];
+}
+console.log(getRandom(numbers));
+console.log(getRandom(strings));
