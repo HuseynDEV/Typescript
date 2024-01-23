@@ -139,19 +139,36 @@ name2("Huseyn", 12)
 
 
 interface Person2 {
-
     firstName: string,
-    lastName: string
+    lastName: string,
+    middleName?: string
 
 }
 // bu oxunaqli deyil
 function getFullName(person: Person2) {
-    return `${person.firstName} ${person.lastName}`
+    return `${person.firstName} ${person.lastName} ${person.middleName} `
 }
 
 let person2 = {
     firstName: "Huseyn",
-    lastName: "Alizada"
+    lastName: "Alizada",
+    // middleName:"dwdadw"
 }
 
 console.log(getFullName(person2))
+
+
+
+// -------------------------------------------------------------------
+interface StringFormat {
+    (str: string, isUpper: boolean): string,
+    
+}
+
+let format: StringFormat
+
+format = function (str: string, isUpper: boolean) {
+    return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase()
+}
+
+console.log(format("Huseyn", true))

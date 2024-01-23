@@ -78,10 +78,16 @@ function name2(ad, age) {
 name2("Huseyn", 12);
 // bu oxunaqli deyil
 function getFullName(person) {
-    return "".concat(person.firstName, " ").concat(person.lastName);
+    return "".concat(person.firstName, " ").concat(person.lastName, " ").concat(person.middleName, " ");
 }
 var person2 = {
     firstName: "Huseyn",
-    lastName: "Alizada"
+    lastName: "Alizada",
+    // middleName:"dwdadw"
 };
 console.log(getFullName(person2));
+var format;
+format = function (str, isUpper) {
+    return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase();
+};
+console.log(format("Huseyn", true));
