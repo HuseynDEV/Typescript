@@ -246,3 +246,34 @@ let userInput: unknown
 
 userInput = 12
 userInput = 'data name'
+
+
+
+
+
+
+
+
+// ---------------------never------------------------
+
+
+// function generateError(message: string, code: number): never {
+//     throw { message: message, errorCode: code }
+// }
+
+// generateError("An error occurred", 500)
+
+// function generateError2(message: string, code: number): any {
+//     throw { message: message, errorCode: code }
+// }
+
+// generateError2("An error occurred", 500)
+
+
+function printResult(num: number): void {
+    console.log("Result " + num)
+}
+
+let combineValues: Function
+combineValues = printResult
+console.log(combineValues)
