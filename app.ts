@@ -230,11 +230,19 @@ format = function (str: string, isUpper: boolean): string {
 // ---------------------Generics---------------------
 let numbers = [12, 32, 43, 12]
 let strings = ['asdaw', 'effesf', 'wawdad']
-function getRandom<T>(items: T[]):T {
+function getRandom<T>(items: T[]): T {
     let randomIndex = Math.floor(Math.random() * items.length)
     return items[randomIndex]
 }
 
-console.log( getRandom(numbers))
-console.log( getRandom(strings))
+console.log(getRandom(numbers))
+console.log(getRandom(strings))
 
+
+
+// ------------------unknown------------------------
+
+let userInput: unknown
+
+userInput = 12
+userInput = 'data name'
