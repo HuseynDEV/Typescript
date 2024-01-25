@@ -15,8 +15,25 @@ function add(a, b) {
 }
 console.log(add(12, 12));
 function printEmployee(emp) {
-    console.log("Name", emp.name);
+    // console.log("Name", emp.name);
+    // if('privileges' in emp){
+    //     console.log("Privileges"+emp.privileges)
+    // }
+    console.log(emp.name);
     if ('privileges' in emp) {
-        console.log("Privileges" + emp.privileges);
+        console.log(emp.privileges);
+    }
+}
+printEmployee({ name: "wadaw", privileges: ['awdawd'], });
+function getName(data) {
+    console.log(data.name);
+    if ('age' in data) {
+        console.log(data.age);
+    }
+}
+getName({ name: 'awadw', age: 12 });
+function moveAnimal(animal) {
+    if ('flyingSpeed' in animal) {
+        console.log(animal.flyingSpeed);
     }
 }
