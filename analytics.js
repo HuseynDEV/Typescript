@@ -37,3 +37,27 @@ function moveAnimal(animal) {
         console.log(animal.flyingSpeed);
     }
 }
+function addItem(a, b) {
+    const result = a + b;
+    return result;
+}
+function calculate(a, b, calcFn) {
+    console.log(calcFn(a, b));
+}
+calculate(12, 15, addItem);
+let name10 = "12";
+let items = {
+    name: "Huseyn",
+    number: 12
+};
+console.log(items.number);
+const textStorage = {
+    storage: [],
+    add(data) { }
+};
+function merge(a, b) {
+    return Object.assign(Object.assign({}, a), b);
+}
+const newUser = merge({ name: "Max" }, { age: 34 });
+const newUser2 = merge({ name: "Max" }, { age: 34 });
+// const newUser = merge("awda", 12)
