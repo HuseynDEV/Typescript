@@ -35,20 +35,70 @@ function add(a: Combinable, b: Combinable) {
     if (typeof a === 'string' || typeof b === 'string') {
         return a.toString() + b.toString()
     }
-    return a+b
+    return a + b
 }
 
 
-console.log(add(12,12))
+console.log(add(12, 12))
 
-type UnknownEmployee=Employee | Admin
+type UnknownEmployee = Employee | Admin
 
 
-function printEmployee(emp:UnknownEmployee){
-    console.log("Name", emp.name);
+function printEmployee(emp: UnknownEmployee) {
+    // console.log("Name", emp.name);
 
-    if('privileges' in emp){
-        console.log("Privileges"+emp.privileges)
+    // if('privileges' in emp){
+    //     console.log("Privileges"+emp.privileges)
 
+    // }
+
+    console.log(emp.name)
+    if ('privileges' in emp) {
+        console.log(emp.privileges)
+    }
+}
+
+
+
+
+printEmployee({ name: "wadaw", privileges: ['awdawd'], })
+
+type name1 = {
+    name: string,
+    age: number
+}
+
+type name2 = {
+    name: string,
+    ary: string[]
+}
+
+type allName = name2 | name1
+
+function getName(data: allName) {
+    console.log(data.name)
+    if ('age' in data) {
+        console.log(data.age)
+    }
+}
+
+getName({ name: 'awadw', age: 12 })
+
+// --------------------------unions-----------------------
+
+interface Bird {
+    flyingSpeed: Number
+}
+
+interface Horse {
+    runningSpeed: number
+}
+
+type Animal = Bird | Horse
+
+
+function moveAnimal(animal: Animal) {
+    if ('flyingSpeed' in animal) {
+        console.log(animal.flyingSpeed)
     }
 }
